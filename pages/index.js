@@ -17,11 +17,11 @@ export default function Home() {
       document.querySelectorAll("[data-scroll-to]").forEach((item) => {
         item.addEventListener("click", () => {
           const targetId = item.getAttribute("data-scroll-to");
-          const target = document.getElementById(!targetId);
-          if (target) {
+          const targetElement = document.querySelector(targetId);
+          if (targetElement) {
             targetElement.scrollIntoView({ behavior: "smooth" });
-          } else{
-              console.error('Element with ID ${targetId} not found');
+          } else {
+             console.error(`Element with ID ${targetId} not found`);
           }
         });
       });
@@ -37,14 +37,15 @@ export default function Home() {
             className="rounded-2xl"
           />
            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-black font-medium">
-             <div className="cursor-pointer hover:text-yellow-300">Үйлчилгээ</div>
-             <div className="cursor-pointer hover:text-yellow-300">Давуу тал</div>
-             <div className="cursor-pointer hover:text-yellow-300">Мэдээ</div>
-             <div className="cursor-pointer hover:text-yellow-300">Хамтран ажиллах</div>
+             <div className="cursor-pointer hover:text-yellow-300" data-scroll-to="#section1">Үйлчилгээ</div>
+             <div className="cursor-pointer hover:text-yellow-300" data-scroll-to="#section2">Давуу тал</div>
+             <div className="cursor-pointer hover:text-yellow-300" data-scroll-to="#section3">Мэдээ</div>
+             <div className="cursor-pointer hover:text-yellow-300" data-scroll-to="#section4">Дэлгүүр</div>
+             <div className="cursor-pointer hover:text-yellow-300" data-scroll-to="#section5">Хамтран ажиллах</div>
            </div>
       </div>
 
-      <div className="min-h-screen w-screen bg-amber-100 flex flex-col items-center justify-center text-center pt-36 px-4">
+      <div className="min-h-screen w-screen bg-amber-100 flex flex-col items-center justify-center text-center pt-36 px-4" id="section1">
         <div className="text-2xl md:text-3xl text-black mb-8">ХЭРЭГЦЭЭТ ҮЙЛЧИЛГЭЭГ НЭГ ДОРООС...</div>
         <img
           src="https://www.toki.mn/wp-content/uploads/2020/06/Artboard-1-2.png"
@@ -56,36 +57,37 @@ export default function Home() {
           <img width={130} className="w-[130px] h-auto" src="https://www.toki.mn/wp-content/uploads/2021/01/android.png" />
         </div>
       </div>
-      <div className="min-h-screen w-screen bg-white flex flex-col md:flex-row items-center justify-center px-6 md:px-20">
+      <div className="min-h-screen w-screen bg-white flex flex-col md:flex-row items-center justify-center px-6 md:px-20" id="section2">
         <img className="w-full md:w-1/2 max-w-[1000px] h-auto" src="https://www.toki.mn/wp-content/uploads/2020/06/Artboard-2.png" />
         <div className="mt-8 md:mt-0 md:ml-12 text-center md:text-left">
           <p className="text-2xl md:text-3xl font-bold text-yellow-500">Toki Service</p>
-          <p className="mt-4 text-black text-sm md:text-base leading-relaxed">
+          <p className="mt-4 text-black text-sm md:text-base">
             Та такси дуудах, кофе, хоол захиалах, нэгж дата авах, хэрэглээний төлбөрүүдээ төлөх, тоглоом тоглох,
             цэнэглэх гэх мэт өдөр бүрд хэрэгтэй үйлчилгээнүүдээ нэг дороос хялбар, хурдан авах боломжтой.
           </p>
         </div>
       </div>
-      <div className="min-h-screen w-screen bg-yellow-100 flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-20">
+      <div id="section3" className="min-h-screen w-screen bg-yellow-100 flex flex-col-reverse md:flex-row items-center justify-center px-6 md:px-20" >
         <div className="mt-8 md:mt-0 md:mr-12 text-center md:text-right">
           <p className="text-2xl md:text-3xl font-bold text-yellow-500">Toki Pay</p>
-          <p className="mt-4 text-black text-sm md:text-base leading-relaxed">
+          <p className="mt-4 text-black text-sm md:text-base">
             Toki Pay нь таны бодит хэтэвчийг цахимжуулсан цоо шинэ дижитал хэтэвч юм. Бүх банкны картаа холбож
             төлбөрөө төлөөд, лояалти карт болон бичиг баримтуудаа нэг дор хадгалаарай.
+
           </p>
         </div>
         <img className="w-full md:w-1/2 max-w-[1000px] h-auto" src="https://www.toki.mn/wp-content/uploads/2020/06/Artboard-3.png" />
       </div>
-      <div className="min-h-screen w-screen bg-zinc-100 flex flex-col md:flex-row items-center justify-center px-6 md:px-20">
+      <div className="min-h-screen w-screen bg-zinc-100 flex flex-col md:flex-row items-center justify-center px-6 md:px-20" id="section4">
         <img className="w-full md:w-1/2 max-w-[1000px] h-auto" src="https://www.toki.mn/wp-content/uploads/2020/06/Artboard-4.png" />
         <div className="mt-8 md:mt-0 md:ml-12 text-center md:text-left">
           <p className="text-2xl md:text-3xl font-bold text-yellow-500">Toki Shop</p>
-          <p className="mt-4 text-black text-sm md:text-base leading-relaxed">
+          <p className="mt-4 text-black text-sm md:text-base">
             Та өөрийн хүссэн бараагаа албан ёсны дэлгүүрүүдээс сонголт хийж, нэг дороос шууд захиалах боломжтой.
           </p>
         </div>
       </div>
-      <div className="min-h-[500px] w-screen flex flex-col">
+      <div className="min-h-[500px] w-screen flex flex-col" >
         <div className="h-auto w-full bg-white flex flex-col items-center text-center px-6 pt-20 pb-12">
           <p className="text-2xl md:text-3xl font-bold text-yellow-500">Toki апп өдөр бүр танд тусална</p>
           <p className="mt-8 text-black text-sm md:text-base leading-relaxed max-w-3xl">
@@ -94,7 +96,7 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="h-[170px] w-full bg-amber-100 flex justify-center items-center">
+        <div className="h-[170px] w-full bg-amber-100 flex justify-center items-center" id="section5">
           <div className="h-12 w-44 bg-yellow-300 rounded-3xl flex items-center justify-center font-semibold text-white cursor-pointer">
             Давуу Тал
           </div>

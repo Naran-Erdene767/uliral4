@@ -177,7 +177,7 @@ export default function Lab1() {
                 type="checkbox"
                 className="ml-4 w-6 h-6 bg-none border-2 border-orange-400 rounded-md cursor-pointer"
             />
-              <div className=' w-70 h-[100%] ml-16 flex flex-row items-center'>Огноо
+              <div className=' w-70 h-[100%] ml-40 flex flex-row items-center'>Огноо
                 <div className='flex flex-col ml-2'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="orange" class="bi bi-caret-up-fill" viewBox="0 0 16 16">
                         <path d="m7.247 4.86-4.796 5.481c-.566.647-.106 1.659.753 1.659h9.592a1 1 0 0 0 .753-1.659l-4.796-5.48a1 1 0 0 0-1.506 0z"/>
@@ -243,6 +243,7 @@ export default function Lab1() {
       type="checkbox"
       className="ml-4 w-6 h-6 bg-none border-2 border-orange-400 rounded-md cursor-pointer"
     />
+    <img src={item.image} width={50} className="ml-12"/>
     <div className='w-70 h-[100%] ml-16 flex flex-row items-center'>
       2025-04-25 00:00
     </div>

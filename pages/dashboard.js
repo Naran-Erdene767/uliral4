@@ -17,7 +17,7 @@ import { useRouter } from "next/router";
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
-  const [data, setData] = useState("");
+    const [data, setData] = useState("");
     const [loading, setLoading] = useState(true);
     const [search, setSearch] = useState("");
     const [Grid, setGrid] = useState(false);
@@ -46,42 +46,46 @@ export default function Home() {
     const Back = () => {
       router.push("/semester-4/lab-1");
     };
+    const Back1 = () => {
+      router.push("/semester-4/lab-0");
+    };
+
 
 
   return (
-    <div className="h-screen flex flex-row gap-x-4 p-4 bg-gray-300 font-bold text-black">
+    <div className="h-full flex flex-row gap-x-4 p-4 bg-gray-300 font-bold text-black">
     <div className="h-[97vh] w-[20%] bg-white p-4 flex flex-col items-center rounded-xl text-black">
         <div className='flex flex-col items-center'>
             <img src='https://nhs.edu.mn/favicon.ico' width={120}/>
             <div className='text-purple-600 mt-4 font-bold'>11В Г.Наран-Эрдэнэ</div>
          </div>    
         <div className='h-[65%] w-[90%] mt-8'>
-                <button className="h-[10%] w-[100%] flex flex-row items-center focus:bg-orange-500 focus:text-white cursor-pointer rounded-xl">
+                <button onClick={Back1} className="h-[10%] w-[100%] flex flex-row items-center focus:bg-orange-500 focus:text-white cursor-pointer rounded-xl">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ui-checks-grid" viewBox="0 0 16 16" className='text-black ml-4'>
                     <path d="M2 10h3a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1m9-9h3a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 9a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1zm0-10a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM2 9a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2zm7 2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2zM0 2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.354.854a.5.5 0 1 0-.708-.708L3 3.793l-.646-.647a.5.5 0 1 0-.708.708l1 1a.5.5 0 0 0 .708 0z"/>
                 </svg>
-                <p className='ml-2 text-semibold'>Хянах самбар</p>
+                <p className='ml-2 text-semibold'>lab-0</p>
                 </button>
 
                 <button onClick={Back} className="h-[10%] w-[100%] flex flex-row items-center focus:bg-orange-500 focus:text-white cursor-pointer rounded-xl mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-truck" viewBox="0 0 16 16" className='text-black ml-4' >
                     <path d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5zm1.294 7.456A2 2 0 0 1 4.732 11h5.536a2 2 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456M12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2m9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2"/>
                 </svg>
-                <p className='ml-2 text-semibold'>Хүргэлт</p>
+                <p className='ml-2 text-semibold'>lab-1</p>
+                </button>
+                
+                <button onClick={Back} className="h-[10%] w-[100%] flex flex-row items-center focus:bg-orange-500 focus:text-white cursor-pointer rounded-xl mt-2">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16" className='text-black ml-4'>
+                    <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z"/>
+                </svg>
+                <p className='ml-2 text-semibold'>lab-2</p>
                 </button>
                 
                 <button className="h-[10%] w-[100%] flex flex-row items-center focus:bg-orange-500 focus:text-white cursor-pointer rounded-xl mt-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16" className='text-black ml-4'>
                     <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z"/>
                 </svg>
-                <p className='ml-2 text-semibold'>Тооцоо</p>
-                </button>
-                
-                <button className="h-[10%] w-[100%] flex flex-row items-center focus:bg-orange-500 focus:text-white cursor-pointer rounded-xl mt-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wallet2" viewBox="0 0 16 16" className='text-black ml-4'>
-                    <path d="M12.136.326A1.5 1.5 0 0 1 14 1.78V3h.5A1.5 1.5 0 0 1 16 4.5v9a1.5 1.5 0 0 1-1.5 1.5h-13A1.5 1.5 0 0 1 0 13.5v-9a1.5 1.5 0 0 1 1.432-1.499zM5.562 3H13V1.78a.5.5 0 0 0-.621-.484zM1.5 4a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5h13a.5.5 0 0 0 .5-.5v-9a.5.5 0 0 0-.5-.5z"/>
-                </svg>
-                <p className='ml-2 text-semibold'>Хэрэглэгчид</p>
+                <p className='ml-2 text-semibold'>lab-3</p>
                 </button>
                 
                 <button className="h-[10%] w-[100%] flex flex-row items-center focus:bg-orange-500 focus:text-white cursor-pointer rounded-xl mt-2">
@@ -92,19 +96,9 @@ export default function Home() {
                 <p className='ml-2 text-semibold'>Салбар</p>
                 </button>
 
-                <button className="h-[10%] w-[100%] flex flex-row items-center focus:bg-orange-500 focus:text-white cursor-pointer rounded-xl mt-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-geo" viewBox="0 0 16 16" className='text-black ml-4'>
-                    <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6M4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.3 1.3 0 0 0-.37.265.3.3 0 0 0-.057.09V14l.002.008.016.033a.6.6 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.6.6 0 0 0 .146-.15l.015-.033L12 14v-.004a.3.3 0 0 0-.057-.09 1.3 1.3 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465s-2.462-.172-3.34-.465c-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411"/>
-                </svg>
-                <p className='ml-2 text-semibold'>Бүс</p>
-                </button>
+                
 
-                <button className="h-[10%] w-[100%] flex flex-row items-center cursor-pointer rounded-xl mt-2 focus:bg-orange-500 focus:text-white">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-sliders" viewBox="0 0 16 16" className='text-black ml-4'>
-                    <path fill-rule="evenodd" d="M11.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M9.05 3a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0V3zM4.5 7a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M2.05 8a2.5 2.5 0 0 1 4.9 0H16v1H6.95a2.5 2.5 0 0 1-4.9 0H0V8zm9.45 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m-2.45 1a2.5 2.5 0 0 1 4.9 0H16v1h-2.05a2.5 2.5 0 0 1-4.9 0H0v-1z"/>
-                </svg>
-                <p className='ml-2 text-semibold'>Үүрэг</p>
-                </button>
+                
             </div>
             <div className='h-[7%] w-[90%] mt-auto flex flex-row items-center cursor-pointer rounded-xl mt-2 focus:bg-orange-500'>
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="red" class="bi bi-box-arrow-right" viewBox="0 0 16 16" className='ml-4'>
@@ -119,16 +113,11 @@ export default function Home() {
                 </div>
       </div>
       <div className='min-h-screen w-full p-8'>
-            <button
-        className="mt-8 h-16 w-36 cursor-pointer bg-indigo-600 text-white font-semibold rounded-lg shadow-xl hover:bg-indigo-700 transform transition duration-300 ease-in-out mb-6"
-      >
-        Go Back
-      </button>
             <div className="flex items-center gap-4 mb-6 ml-4">
                 <input
                     type="text"
                     placeholder="Search clothes..."
-                    className="p-2 border border-gray-300 rounded w-96"
+                    className="p-2 border border-gray-300 rounded w-96 bg-white"
                     value={search}
                     onChange={(e) => setSearch(e.target.value)}
                 />

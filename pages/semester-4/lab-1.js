@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { useRouter } from "next/router";
 const Data = [
   {
     id: 1,
@@ -70,15 +70,20 @@ export default function Lab1() {
         ? element
         : element.name.toLocaleLowerCase().includes(filter.toLocaleLowerCase());
     });
+    const router = useRouter();
+    const Back = () => {
+      router.push("/dashboard");
+    };
   return(
     <div className="h-screen flex flex-row gap-x-4 p-4 bg-gray-300 font-bold text-black">
+      
       <div className="h-[97vh] w-[20%] bg-white p-4 flex flex-col items-center rounded-xl">
         <div className='flex flex-col items-center'>
             <img src='https://nhs.edu.mn/favicon.ico' width={120}/>
             <div className='text-purple-600 mt-4 font-bold'>11В Г.Наран-Эрдэнэ</div>
          </div>    
         <div className='h-[65%] w-[90%] mt-8'>
-                <button className="h-[10%] w-[100%] flex flex-row items-center focus:bg-orange-500 focus:text-white cursor-pointer rounded-xl">
+                <button onClick={Back} className="h-[10%] w-[100%] flex flex-row items-center focus:bg-orange-500 focus:text-white cursor-pointer rounded-xl">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-ui-checks-grid" viewBox="0 0 16 16" className='text-black ml-4'>
                     <path d="M2 10h3a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1v-3a1 1 0 0 1 1-1m9-9h3a1 1 0 0 1 1 1v3a1 1 0 0 1-1 1h-3a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1m0 9a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1zm0-10a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM2 9a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h3a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2zm7 2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-3a2 2 0 0 1-2-2zM0 2a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm5.354.854a.5.5 0 1 0-.708-.708L3 3.793l-.646-.647a.5.5 0 1 0-.708.708l1 1a.5.5 0 0 0 .708 0z"/>
                 </svg>
@@ -163,6 +168,7 @@ export default function Lab1() {
 
 
 
+
             <div className='h-[100%] w-[5%] bg-orange-400 ml-4 rounded-2xl flex justify-center items-center cursor-pointer'>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-printer" viewBox="0 0 16 16" className='text-orange-700'>
                     <path d="M2.5 8a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1"/>
@@ -243,7 +249,8 @@ export default function Lab1() {
       type="checkbox"
       className="ml-4 w-6 h-6 bg-none border-2 border-orange-400 rounded-md cursor-pointer"
     />
-    <div className='w-70 h-[100%] ml-16 flex flex-row items-center'>
+    <img src={item.image} className="ml-8" width={50}/>
+    <div className='w-70 h-[100%] ml-4 flex flex-row items-center'>
       2025-04-25 00:00
     </div>
     <div className='w-90 h-[100%] flex flex-row items-center'>

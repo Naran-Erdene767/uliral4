@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { useRouter } from "next/router";
 import { Geist, Geist_Mono } from "next/font/google";
 import { useEffect } from "react";
 
@@ -26,9 +26,21 @@ export default function Home() {
         });
       });
     }, []);
+    const router = useRouter();
+
+  const Back = () => {
+    router.push("/dashboard");
+  };
   return (
-    <div className="h-max w-screen bg-blue-400 flex flex-col">
+    <div className="h-max w-screen bg-white flex flex-col">
+      
       <div className="w-full bg-white fixed top-0 left-0 z-50 px-4 md:px-20 py-4 flex flex-col md:flex-row items-center justify-around space-y-4 md:space-y-0">
+      <button
+        onClick={Back}
+        className="h-16 w-36 cursor-pointer bg-indigo-600 text-white font-semibold rounded-lg shadow-xl hover:bg-indigo-700 transform transition duration-300 ease-in-out"
+      >
+        Go Back
+      </button>
           <img
             src="https://www.toki.mn/wp-content/uploads/2022/08/Asset-1@3x.png"
             alt="Logo"
